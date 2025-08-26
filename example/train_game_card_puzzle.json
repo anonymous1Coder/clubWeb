@@ -1,0 +1,382 @@
+{
+    "puzzle_name": "Train Game Card Puzzle",
+    "base_rule": "Poker is a classic logic-based game. A full deck contains 54 cards, including one big joker, one little joker, and 52 standard cards. The standard cards are divided into four suits: spade, heart, club, and diamond. Each suit consists of 13 cards, numbered from 1 to 10, followed by the letters J, Q, and K, representing 11, 12, and 13 respectively. For example: “spade 1”, “club J”.\n\n“Train Game” is a competitive game based on poker, suitable for two or more players. All cards are evenly distributed among the players, who are not allowed to look at their cards. Each player’s cards must remain face down and stacked as a personal deck.\n\nThe game proceeds in a clockwise direction, with players taking turns. On each turn, a player must reveal and play the top card from their deck, placing it face up onto a shared central pile in the order played.\n\nIf a player plays a card with the same rank as any card already in the central pile (the suit can be different, and the two Jokers are also considered as the same), the ”Train Collection” rule is triggered: the newly played card is called the ”engine”, and the matching card in the pile is called the ”caboose”. At this point, the player may take all cards from the ”engine” to the ”caboose” (inclusive of both ends), add them to their own deck, and continue revealing cards. Normally, the collected cards should be shuffled before being used as a new deck, but to simplify the puzzle, the collected train cards are placed in order at the bottom of the player's deck without shuffling, with the ”engine” on top and the ”caboose” at the bottom.\n\nThe game continues until only one player has cards remaining; then the game ends and that player wins.",
+    "parameters": [
+        {
+            "name": "num_people",
+            "description": "number of players",
+            "min": 2,
+            "max": 20,
+            "step": 1,
+            "variant": "if the number of players cannot evenly divide the total number of cards, excess cards need to be removed"
+        },
+        {
+            "name": "num_cards",
+            "description": "number of cards per suit",
+            "min": 1,
+            "max": 13,
+            "step": 1
+        },
+        {
+            "name": "num_suits",
+            "description": "number of suits",
+            "min": 2,
+            "max": 4,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "A deck of cards contains 1 big joker and 1 little joker, with 2 suits (hearts and spades), and 2 cards per suit (numbered 1-2). There are 2 players. Player 1's initial deck is: [\"heart 1\", \"spade 1\", \"little joker\"]. Player 2's initial deck is: [\"big joker\", \"spade 2\", \"heart 2\"]. Please provide the sequence of cards played by the players. The play sequence is a list composed of multiple rounds. Each round is represented by a list, where the order of cards indicates the sequence of cards in the shared pile on the table during that round. Every time a train is triggered (i.e., a match occurs and cards are collected), that marks the end of a round. Each element in the list corresponds to the sequence of cards played in that round.",
+            "question": [
+                [
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_"
+                ]
+            ],
+            "answer": [
+                [
+                    "heart 1",
+                    "big joker",
+                    "spade 1"
+                ],
+                [
+                    "little joker",
+                    "spade 2",
+                    "spade 1",
+                    "heart 2"
+                ],
+                [
+                    "little joker",
+                    "heart 2",
+                    "big joker"
+                ],
+                [
+                    "heart 1",
+                    "spade 1"
+                ],
+                [
+                    "spade 2",
+                    "big joker",
+                    "spade 1",
+                    "heart 2"
+                ],
+                [
+                    "little joker",
+                    "heart 1"
+                ]
+            ]
+        },
+        {
+            "puzzle": "A deck of cards contains 1 big joker and 1 little joker, with 3 suits (hearts, spades, and clubs), and 6 cards per suit (numbered 1–6). There are 3 players. Player 1's initial deck is: [\"Club 5\", \"Heart 1\", \"Heart 6\", \"Spade 2\", \"Club 2\", \"Heart 2\"]. Player 2's initial deck is: [\"Spade 5\", \"Club 6\", \"Heart 3\", \"Spade 1\", \"Heart 5\", \"Heart 4\"]. Player 3's initial deck is: [\"Spade 4\", \"Club 3\", \"Spade 3\", \"Club 4\", \"Spade 6\", \"Club 1\"]. Please provide the sequence of cards played by the players. The play sequence is a list composed of multiple rounds. Each round is represented by a list, where the order of cards indicates the sequence of cards in the shared pile on the table during that round. Every time a train is triggered (i.e., a match occurs and cards are collected), that marks the end of a round. Each element in the list corresponds to the sequence of cards played in that round.",
+            "question": [
+                [
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_"
+                ],
+                [
+                    "_",
+                    "_",
+                    "_",
+                    "_",
+                    "_"
+                ]
+            ],
+            "answer": [
+                [
+                    "club 5",
+                    "spade 5"
+                ],
+                [
+                    "club 6",
+                    "spade 4",
+                    "heart 1",
+                    "heart 3",
+                    "club 3"
+                ],
+                [
+                    "club 6",
+                    "spade 4",
+                    "heart 1",
+                    "spade 3",
+                    "heart 6"
+                ],
+                [
+                    "spade 2",
+                    "spade 1",
+                    "club 4",
+                    "club 2"
+                ],
+                [
+                    "heart 2",
+                    "heart 5",
+                    "spade 6",
+                    "heart 6"
+                ],
+                [
+                    "heart 2",
+                    "heart 5",
+                    "spade 3",
+                    "heart 4",
+                    "club 1",
+                    "heart 1"
+                ],
+                [
+                    "heart 2",
+                    "heart 5",
+                    "spade 3",
+                    "heart 4",
+                    "spade 4"
+                ],
+                [
+                    "heart 2",
+                    "heart 5",
+                    "spade 3",
+                    "club 6",
+                    "spade 5"
+                ],
+                [
+                    "heart 2",
+                    "club 5",
+                    "club 3",
+                    "club 2"
+                ],
+                [
+                    "club 4",
+                    "spade 5",
+                    "heart 3",
+                    "spade 1",
+                    "club 6",
+                    "spade 2",
+                    "spade 3"
+                ],
+                [
+                    "club 4",
+                    "spade 5",
+                    "heart 5"
+                ],
+                [
+                    "club 4",
+                    "spade 3",
+                    "heart 6",
+                    "spade 2",
+                    "spade 6"
+                ],
+                [
+                    "club 4",
+                    "spade 3",
+                    "heart 1",
+                    "club 6",
+                    "club 1"
+                ],
+                [
+                    "club 4",
+                    "spade 3",
+                    "spade 4"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "club 2",
+                    "heart 3",
+                    "club 3"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "club 2",
+                    "club 5",
+                    "heart 5"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "club 2",
+                    "spade 5",
+                    "heart 2"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "spade 6",
+                    "heart 5",
+                    "spade 2",
+                    "club 5"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "spade 6",
+                    "club 5",
+                    "heart 6"
+                ],
+                [
+                    "heart 4",
+                    "spade 1",
+                    "club 1"
+                ],
+                [
+                    "heart 4",
+                    "club 6",
+                    "spade 2",
+                    "heart 1",
+                    "heart 5"
+                ]
+            ]
+        }
+    ]
+}

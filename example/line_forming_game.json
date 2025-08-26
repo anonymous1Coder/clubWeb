@@ -1,0 +1,35 @@
+{
+    "puzzle_name": "line_forming_game",
+    "base_rule": "The N-in-a-row game is a general version of the tic-tac-toe family (also known as the m,n,k-game), played on an N×N board with players taking turns. The first player uses O, and the second player uses X. It generalizes classic games like tic-tac-toe and Gomoku.\n\nBasic rules:\n1. Move rule: Two players take turns placing their symbol in empty cells—O for the first player, X for the second. Once a cell is filled, it cannot be changed or moved.\n2. Win condition: If a player achieves K identical symbols (O or X) in a row horizontally, vertically, or diagonally (45°), they immediately win. If the entire board is filled and no player has achieved a K-in-a-row, the game ends in a draw, denoted as 'Both'.\n\nKnown conditions:\nThe board size N×N and target line length K must be specified. The initial configuration may contain zero or more placed symbols (O or X) and must be valid—i.e., no player has already won or any rule violations exist.\n\nObjective:\nGiven N, K, and the initial configuration, players alternate turns following the rules until one of three outcomes occurs:\n1. O forms a K-in-a-row → O wins;\n2. X forms a K-in-a-row → X wins;\n3. The board is filled without any K-in-a-row → Both (draw).",
+    "parameters": [
+        {
+            "name": "size_i",
+            "description": "The size of the chessboard (the number of rows or columns, since the number of rows is equal to the number of columns)",
+            "min": 3,
+            "max": 20,
+            "step": 1
+        },
+        {
+            "name": "n_in_a_row_i",
+            "description": "The number of pieces that count as a win when connected in a line",
+            "min": 3,
+            "max": 20,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "Given N = 10 and K = 5, and the first player is Amy (playing O), while the second player is Bob (playing X), the final state of the board is as follows (with the top row as column indices and the leftmost column as row indices):\n\n    0  1  2  3  4  5  6  7  8  9\n 0  X  .  .  .  O  O  .  .  O  .\n 1  .  O  .  .  O  .  .  .  .  .\n 2  X  .  .  O  .  .  X  .  X  .\n 3  .  .  O  .  .  O  .  .  .  .\n 4  .  O  .  .  X  .  O  .  .  .\n 5  .  .  X  X  .  .  .  .  .  .\n 6  .  O  .  .  .  .  .  X  .  .\n 7  .  .  X  .  O  .  X  .  .  X\n 8  .  O  .  .  .  .  .  X  .  .\n 9  .  .  .  .  .  .  .  .  .  .\n\nDetermine the winner (if any), or output \"Both\" if it is a draw. Also, list a valid move sequence (set of coordinates) for both players.",
+            "question": {
+                "Winner": "_",
+                "Amy": [["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"]],
+                "Bob": [["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"], ["_", "_"]]
+            },
+            "answer": {
+                "Winner": "Amy",
+                "Amy": [[2, 3], [4, 6], [7, 4], [0, 4], [3, 5], [1, 4], [1, 1], [6, 1], [0, 8], [8, 1], [4, 1], [3, 2], [0, 5]],
+                "Bob": [[4, 4], [2, 8], [7, 9], [7, 2], [7, 6], [5, 3], [2, 0], [6, 7], [8, 7], [2, 6], [0, 0], [5, 2]]
+              }
+        }
+    ]
+}

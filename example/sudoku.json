@@ -1,0 +1,40 @@
+{
+    "puzzle_name": "sudoku",
+    "base_rule": "Sudoku is a classic number puzzle based on permutation and logical reasoning. A standard Sudoku board is a 9×9 square grid, consisting of 81 cells divided into nine 3×3 subgrids (blocks). \n The filling rules are as follows, all of which must be satisfied simultaneously: 1. Row constraint: Each of the 9 rows must contain the digits 1 to 9 exactly once, with no repetitions. 2. Column constraint: Each of the 9 columns must contain the digits 1 to 9 exactly once, with no repetitions. 3. Block constraint: Each of the nine 3×3 subgrids must also contain the digits 1 to 9 exactly once, with no repetitions. \n Known conditions: The initial puzzle provides several pre-filled digits as clues; the remaining cells are blank and denoted by zeros ('0'). All given digits must satisfy the above constraints (i.e., the initial state is valid). \n Solving objective: Based on the given clues, infer and fill in all remaining cells such that the entire board satisfies all three constraints. Each valid puzzle should have a unique solution, with no multiple valid completions.",
+    "parameters": [
+        {
+            "name": "mask_num",
+            "description": "the number of spaces",
+            "min": 1,
+            "max": 80,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "",
+            "question": [
+                [9,4,6,5,8,1,7,2,3],
+                [8,3,1,6,7,2,0,5,9],
+                [2,5,7,3,9,4,6,8,1],
+                [6,7,4,2,1,9,5,3,8],
+                [3,8,0,4,6,5,1,9,7],
+                [5,1,9,7,3,8,2,6,4],
+                [4,2,8,1,5,3,9,7,6],
+                [1,6,3,9,2,7,8,4,5],
+                [7,9,5,8,4,6,3,1,2]
+              ],
+            "answer": [
+                [9,4,6,5,8,1,7,2,3],
+                [8,3,1,6,7,2,4,5,9],
+                [2,5,7,3,9,4,6,8,1],
+                [6,7,4,2,1,9,5,3,8],
+                [3,8,2,4,6,5,1,9,7],
+                [5,1,9,7,3,8,2,6,4],
+                [4,2,8,1,5,3,9,7,6],
+                [1,6,3,9,2,7,8,4,5],
+                [7,9,5,8,4,6,3,1,2]
+            ]
+        }
+    ]
+}

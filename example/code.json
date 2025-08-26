@@ -1,0 +1,44 @@
+{
+    "puzzle_name": "code",
+    "base_rule": "Code puzzles are a type of intellectual task centered on program semantics, combining logical reasoning with algorithmic analysis. They typically provide a snippet of code (pseudocode, functions, flowcharts, etc.) or a validator function, and require you to infer its behavior, output, or to reverse-engineer the possible input.\n\nBasic rules:\n1. Given program structure: Usually a piece of pseudocode, a function, or execution constraints, possibly including branches, loops, recursion, memoization, side effects, etc.\n2. Reasoning goals: Compute the program’s output or intermediate states; verify whether the program satisfies a certain property (e.g., correctness, termination); reverse the input or reconstruct missing logic.\n3. Efficiency requirement: Although brute-force simulation or exhaustive search can yield answers, the ideal solution should rely on structured logical analysis or algorithmic design (e.g., recursive deduction, dynamic programming, mathematical induction). In some cases, the reasoning process or key logic steps must be explicitly shown.\n\nKnown conditions:\n1. Code logic: The main program, function definition, pseudocode, or execution constraints.\n2. Input description: May include specific input values, input range, edge cases, or test cases.\n3. Output specification: Explicitly states what should be output (e.g., numeric values, intermediate variables, booleans, paths, etc.).\n4. Additional constraints: May include time complexity limits, resource restrictions, recursion depth, etc.\n\nFinal objective:\nThe goal typically includes at least one of the following:\n1. Accurate output deduction: Determine the program’s final output for a given input;\n2. Intermediate state analysis: Understand key execution paths and intermediate values;\n3. Property verification: Judge whether the program meets a specific property (e.g., sorting, balance, termination);\n4. Reverse input inference: Given an expected output, infer possible inputs;\n5. Logic completion: Fill in missing parts of the code to satisfy requirements;\n6. Clear reasoning steps: When required, provide step-by-step logical deduction.",
+    "parameters": [
+        {
+            "name": "num_problems",
+            "description": "The number of questions",
+            "min": 1,
+            "max": 1,
+            "step": 0
+        },
+        {
+            "name": "n",
+            "description": "The scale of the problem",
+            "min": 1,
+            "max": 10000,
+            "step": 1,
+            "variant": "It usually represents the first variable hyperparameter in the problem, and this hyperparameter defines the necessary scale in the known conditions of the problem."
+        },
+        {
+            "name": "k",
+            "description": "The scale of sub - problems",
+            "min": 1,
+            "max": 10000,
+            "step": 1,
+            "variant": "It usually represents the second variable hyperparameter in the problem. This hyperparameter further defines the scale of sub - problems under the first hyperparameter and depends on the specific problem."
+        },
+        {
+            "name": "steps",
+            "description": "Infer the specified number of steps",
+            "min": 1,
+            "max": 10000,
+            "step": 1,
+            "variant": "Depending on different questions, there will be different inference steps to support."
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "A pair of baby rabbits starts reproducing from the 3rd month after their birth. Each month, every rabbit pair that has reached this age gives birth to one new pair. The newborn pairs also follow the same rule, starting to reproduce from the 3rd month after they are born. Assume no rabbits ever die. At the beginning of the 1st month, there is one newborn rabbit pair. The rabbits continue to reproduce according to this pattern. \n We use an integer list li of length n to represent the total number of rabbit pairs in each month, where li[i] denotes the number of rabbit pairs in the (i+1)-th month. For example: li = [1, 1, 2] means there are 1, 1, and 2 rabbit pairs in the 1st, 2nd, and 3rd months, respectively. \n Now, given n = 10, please simulate the growth of rabbit pairs from month 1 to month 10 and output a list of length 10 representing the number of rabbit pairs each month.",
+            "question": ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+            "answer": ["1", "1", "2", "3", "5", "8", "13", "21", "34", "55"]
+        }
+    ]
+}

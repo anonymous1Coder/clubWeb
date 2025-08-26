@@ -1,0 +1,29 @@
+{
+    "puzzle_name": "2048",
+    "base_rule": "2048 is a classic sliding tile puzzle game played on a $4\\times4$ grid. The goal is to combine tiles with the same number to form higher-value tiles, ultimately producing at least one 2048 tile.\n\nBasic rules:\n1. Grid structure: The game is typically played on an $n \\times n$ grid (standard size is $4\\times4$). Each cell may contain one numbered tile, and all tile values are powers of 2 (i.e., in the form $2^k$).\n2. Movement and merging: The player can move all movable tiles in one of four directions: u (up), d (down), l (left), r (right). Tiles slide in the chosen direction until they hit the boundary or another tile. When two tiles of the same value collide, they merge into one tile with a value equal to their sum (e.g., 2 + 2 = 4, 4 + 4 = 8). During a single move, each tile can only be merged once. Merge priority: If more than two adjacent tiles have the same value, only the first two in the direction of movement (closest to the edge) are merged; others remain unchanged.\n3. Random tile generation: After each valid move, a new tile is randomly generated in an empty cell. The new tile is 2 with 90% probability, or 4 with 10% probability.\n4. Game over: The game ends when the grid is full and no valid merge can be performed in any direction.\n\nKnown conditions:\n1. Grid size (e.g., $n \\times n$, usually $4\\times4$);\n2. Current grid state (showing the value or emptiness of each cell);\n3. Move command sequence (e.g., \"ld\" means move left, then down);\n4. Merging logic and random tile generation mechanism.\n\nFinal objective:\nSimulate each step of movement and merging according to the given move sequence (e.g., \"ld\"), and output the final grid state. Specific tasks include:\n1. For each move, update the grid with slide and merge operations;\n2. After each move, generate a new tile (if required by the puzzle conditions);\n3. Output the full grid state after processing all operations.",
+    "parameters": [
+        {
+            "name": "n",
+            "description": "Grid size (number of rows or columns, rows = columns)",
+            "min": 1,
+            "max": 100,
+            "step": 1
+        },
+        {
+            "name": "ops",
+            "description": "Number of operations",
+            "min": 1,
+            "max": 1000,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "Now, in the following matrix, move the number at the top-right corner (1,2) using the move sequence 'ld':\n\n\\begin{verbatim}\n2, 2\n4, 4\n\\end{verbatim}\n\nAssume that after each move, the system generates a new tile with value 2 in an empty cell. What is the resulting matrix after the moves?",
+            "question": [["_", "_"],
+            ["_", "_"]],
+            "answer": [[2, 2],
+            [8, 4]]
+        }
+    ]
+}
