@@ -460,7 +460,7 @@ export default function App() {
               </button>
             </div>
             <a
-              href="http://clubweb.site/"
+              href="https:///clubweb.site/"
               target="_blank"
               rel="noreferrer"
               className="text-sm underline hover:text-indigo-600 transition-colors"
