@@ -1,0 +1,26 @@
+{
+    "puzzle_name": "knights_and_knaves",
+    "base_rule": "The Knights and Knaves puzzle is set on a fictional island or environment inhabited by two types of characters: Knights, who always tell the truth, and Knaves, who always lie. Players must analyze the statements made by these characters to determine their true identities.\n\nBasic rules:\n1. Fixed identity traits: All statements made by a Knight are true; all statements made by a Knave are false.\n2. Mutual awareness: Characters fully know whether others are Knights or Knaves.\n3. Semantic convention: Each statement can be directly interpreted as a logical proposition—truthful statements have a truth value of true, and lies have a truth value of false.\n\nKnown conditions:\n1. List of participants: Several characters (e.g., A, B, C...) are involved.\n2. Statement set: Each character makes one or more statements about themselves or others.\n3. Initial state: Identities are unknown (Knight or Knave), but each character knows the others’ identities. No statements violate the basic rules (e.g., no internal contradiction).\n\nFinal objective:\nBy applying logical reasoning, determine whether each character is a Knight or a Knave, and identify the truth value of each statement. The ideal solution should be unique, leading to no ambiguity or logical contradictions.",
+    "parameters": [
+        {
+            "name": "n_people",
+            "description": "total number of people",
+            "min": 2,
+            "max": 100,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "A very special island is inhabited only by knights and knaves. Knights always tell the truth, and knaves always lie. You meet 2 inhabitants: Joseph, and Harper. Please use their statements to deduce who is a knight and who is a knave. \n ## Clues for the Puzzle \n 1. Joseph was heard saying, \"Joseph is a knight if and only if Harper is a knave\". \n 2. Harper stated, \"If Joseph is a knight then Harper is a knight\".",
+            "question": {
+                "Joseph": "_",
+                "Harper": "_"
+            },
+            "answer": {
+                "Joseph": "a knight",
+                "Harper": "a knave" 
+            }
+        }
+    ]
+}

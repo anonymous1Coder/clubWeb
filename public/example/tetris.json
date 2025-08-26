@@ -1,0 +1,37 @@
+{
+    "puzzle_name": "tetris",
+    "base_rule": "Tetris is a classic puzzle and casual game, and one of the most widely spread and popular block-clearing games.\n\nBasic Rules:\n1. Board size: The grid has a fixed size of BOARD_WIDTH × BOARD_HEIGHT. Columns (x) are indexed from left to right starting at 0, and rows (y) from top to bottom starting at 0.\n2. Cell states: Cells occupied by blocks are marked with 'O', and empty cells are marked with 'X'.\n3. Block types: There are 7 standard tetromino types (I, J, L, O, S, Z, T), each with several rotation states. Each block is represented by a structure containing: a template (string matrix, where '.' represents empty and 'O' represents filled), a starting coordinate start_pos (top-left of the template), an ending coordinate end_pos (bottom-right), a name, and a pointer to its next rotation state index next.\n4. Control operations: The player can perform: a — move left by one cell; d — move right by one cell; s — move down by one cell; w — rotate clockwise to the next state. If an operation causes the block to go out of bounds or collide with existing blocks (O), the operation is invalid and the current state is preserved.\n5. Auto-drop: All valid operations, except for s, are followed by an automatic drop of one row.\n6. Landing condition: If the current block can no longer move down (due to hitting the ground or existing O cells), it becomes fixed and its occupied positions are set to O.\n7. Line clearing: If a row is completely filled with O, it is cleared; all rows above it move down by one, and a new empty row (all X) is added at the top.\n8. Game over: If a newly generated block immediately collides with existing O cells at its starting position, the game is over.\n\nKnown Conditions:\nExplicitly provided are: 1. Board size (BOARD_WIDTH × BOARD_HEIGHT); 2. Current grid state (character matrix of O/X);\n3. The currently falling block (including type, template shape, and position); 4. Control rules (movement and rotation rules). It is assumed the current state is valid, with no overlap or out-of-bounds issues.\n\nFinal Objective:\nUnder the above rules and known conditions, through player operations and automatic falling, the block must be placed successfully and possibly trigger line clearing. The goals include:\n1. Maximizing line clears, i.e., scoring by removing as many lines as possible;\n2. Avoiding stacking to the top, keeping the board spacious for further gameplay;\n3. Reasoning or verifying whether the current state and a sequence of operations can allow the game to continue or will lead to a game-over condition.",
+    "parameters": [
+        {
+            "name": "board_width",
+            "description": "The width of the chessboard, that is, the number of columns",
+            "min": 4,
+            "max": 20,
+            "step": 1
+        },
+        {
+            "name": "board_height",
+            "description": "The height of the chessboard, that is, the number of rows",
+            "min": 4,
+            "max": 20,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "Given a Tetris game grid with BOARD_WIDTH of 4 and BOARD_HEIGHT of 4, you will be provided with a sequence of falling blocks during one game. For each block, you will receive its name, the initial positions of its occupied cells (as coordinates in the form of (x, y)), and the sequence of operations it receives. Your task is to output the final state of the grid when the game ends — that is, for each row (y), indicate whether each cell in each column (x) is occupied ('O') or empty ('X'). The initial grid state is:\n\n    0  1  2  3\n 0  X  O  O  X\n 1  X  X  X  X\n 2  X  X  X  X\n 3  X  X  X  X\n\n## Clues for the Example Puzzle\n\n1. {'name': 'O', 'start_cells': [(1, -1), (2, -1), (1, 0), (2, 0)], 'ops': ['a', 'd', 's']}\n2. {'name': 'J', 'start_cells': [(2, -2), (3, -2), (2, -1), (2, 0)], 'ops': ['s']}",
+            "question": {
+                "0": ["_", "_", "_", "_"], 
+                "1": ["_", "_", "_", "_"], 
+                "2": ["_", "_", "_", "_"], 
+                "3": ["_", "_", "_", "_"]
+            },
+            "answer": {
+                "0": ["X", "X", "O", "X"], 
+                "1": ["X", "X", "O", "X"], 
+                "2": ["X", "O", "O", "X"], 
+                "3": ["X", "O", "O", "X"]
+            }
+        }
+    ]
+}

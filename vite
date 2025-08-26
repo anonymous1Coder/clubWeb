@@ -1,0 +1,17 @@
+
+
+  VITE v6.3.5  ready in 179 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+67 |    }
+68 |  }
+69 |  @import "tailwindcss";
+   |  ^^^^^^^^^^^^^^^^^^^^^^
+^C%                                                                                                                                                                                                                                                                                  
+
+
+
+

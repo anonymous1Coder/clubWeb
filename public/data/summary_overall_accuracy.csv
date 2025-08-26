@@ -1,0 +1,13 @@
+Model,Acc Small,Acc All,Cell Acc Small,Cell Acc All
+doubao-1.5-thinking-pro-250415,39.8,,41.27,
+deepseek-reasoner,34.7,,38.81,
+claude-sonnet-4-20250514-thinking,29.4,,32.13,
+claude-sonnet-4-20250514,26.9,,33.58,
+claude-3-7-sonnet-20250219-thinking,24.7,,31.36,
+gpt-4.1,22.6,,25.62,
+claude-3-7-sonnet-20250219,21.5,,32.7,
+qwen3-235b-a22b,17.7,,29.81,
+deepseek-chat,17.2,,24.5,
+doubao-1.5-pro-32k-250115,17.0,,27.7,
+qwen3-32b,15.1,,28.33,
+gpt-4o,12.3,,18.93,

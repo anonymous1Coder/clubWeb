@@ -1,0 +1,48 @@
+{
+    "puzzle_name": "string",
+    "base_rule": "String puzzles are a type of logic reasoning task based on string transformations. The goal is to learn transformation rules from a set of example operations and correctly apply them to a new input string. These puzzles are commonly used to evaluate inductive reasoning, pattern recognition, and program synthesis abilities.\n\nBasic rules:\n1. Operation sequence: Each puzzle involves a sequence of consecutive operations. Each step transforms the current string into the next state. Common operations include (but are not limited to):\n- Find: locate a specific substring;\n- Insert: insert a new string at a given position;\n- Delete: remove a substring;\n- Replace: substitute one substring with another;\n- Sort: reorder characters in a substring.\n2. Operation consistency: For all examples, the operation at the same step number must follow the same logic. For example, step 1 in all examples may be \"insert character A after the first digit\", applied to different strings.\n\nKnown conditions:\n1. A set of example sequences: Each example is a sequence of string states, starting from an original string and showing the intermediate result after each operation. Step numbers (\"1\", \"2\", etc.) indicate operation order. All example sequences have the same number of steps, and the logic of each step is consistent across examples. One additional input string is provided as the target for applying the same sequence of operations.\n2. Input string: A new initial string to which the sequence of operations should be applied.\n\nFinal objective:\n1. Inductive reasoning: Infer the general rule of each operation step from the examples.\n2. Execution: Apply the inferred rules to the input string step by step, generating intermediate states.\n3. Output result: Clearly list the resulting string after each operation step.",
+    "parameters": [
+        {
+            "name": "num_problems",
+            "description": "Number of questions",
+            "min": 1,
+            "max": 1,
+            "step": 0
+        },
+        {
+            "name": "operator_kind_num",
+            "description": "The number of operation types",
+            "min": 1,
+            "max": 14,
+            "step": 1
+        },
+        {
+            "name": "operator_num",
+            "description": "Number of operations",
+            "min": 1,
+            "max": 20,
+            "step": 1
+        },
+        {
+            "name": "str_length",
+            "description": "String length",
+            "min": 10,
+            "max": 50,
+            "step": 5
+        },
+        {
+            "name": "case_num",
+            "description": "Number of reference samples",
+            "min": 1,
+            "max": 10,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "Given several strings consisting of uppercase letters, lowercase letters, and numbers. For each string, perform the operations in the order of the given operations. Please refer to the results of the given operation order to deduce the operation order and complete the entire operation process of the corresponding string. \n Here are the results of the operation order of several strings: \n\n {\"raw\": \"ANsqAN2E6b\", \"1\": \"ANVsqANV2E6b\", \"2\": \"ANuVsqANV2E6b\", \"3\": \"ANluVsqANV2E6b\", \"4\": \"AN7EluVsqANV2E6b\", \"5\": \"AN9W7EluVsqANV2E6b\", \"6\": \"ANQY9W7EluVsqANV2E6b\", \"7\": \"ANzJQY9W7EluVsqANzJV2E6b\", \"8\": \"ANzZzJQY9W7EluVsqANzJV2E6b\", \"9\": \"ANG6zZzJQY9W7EluVsqANzJV2E6b\", \"10\": \"ANlDG6zZzJQY9W7EluVsqANlDzJV2E6b\"} \n {\"raw\": \"M24ycZMANW\", \"1\": \"M24ycZMANVW\", \"2\": \"M24ycZMANuVW\", \"3\": \"M24ycZMANluVW\", \"4\": \"M24ycZMAN7EluVW\", \"5\": \"M24ycZMAN9W7EluVW\", \"6\": \"M24ycZMANQY9W7EluVW\", \"7\": \"M24ycZMANzJQY9W7EluVW\", \"8\": \"M24ycZMANzZzJQY9W7EluVW\", \"9\": \"M24ycZMANG6zZzJQY9W7EluVW\", \"10\": \"M24ycZMANlDG6zZzJQY9W7EluVW\"} \n\n Please deduce the operation order based on the above information and complete the entire operation process of the corresponding string: kOt2OANnFc.",
+            "question": {"raw": "kOt2OANnFc", "1": "", "2": "", "3": "", "4": "", "5": "", "6": "", "7": "", "8": "", "9": "", "10": ""},
+            "answer": {"raw": "kOt2OANnFc", "1": "kOt2OANVnFc", "2": "kOt2OANuVnFc", "3": "kOt2OANluVnFc", "4": "kOt2OAN7EluVnFc", "5": "kOt2OAN9W7EluVnFc", "6": "kOt2OANQY9W7EluVnFc", "7": "kOt2OANzJQY9W7EluVnFc", "8": "kOt2OANzZzJQY9W7EluVnFc", "9": "kOt2OANG6zZzJQY9W7EluVnFc", "10": "kOt2OANlDG6zZzJQY9W7EluVnFc"}
+        }
+    ]
+}
