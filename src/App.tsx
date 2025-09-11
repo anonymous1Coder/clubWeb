@@ -650,6 +650,27 @@ export default function App() {
               </ul>
             </CardContent>
           </Card>
+          
+        {/* 备案信息 */}
+        <div className="w-full flex justify-center mt-8">
+          <div className="flex items-center space-x-1 text-xs text-gray-400">
+            <img
+              src="FilingIcon.png"
+              alt="备案图标"
+              className="w-4 h-4"
+              style={{ display: 'inline-block', verticalAlign: 'middle' }}
+            />
+            <a
+              href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802046278"
+              rel="noreferrer"
+              target="_blank"
+              className="hover:text-indigo-600"
+            >
+              京公网安备11010802046278号
+            </a>
+            <span>京ICP备2025129385号</span>
+          </div>
+        </div>
         </div>
       </div>
     </div>
