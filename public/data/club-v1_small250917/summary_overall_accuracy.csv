@@ -1,4 +1,6 @@
 Model,Acc,Cell Acc
+openrouter:grok-4,65.0,61.44
+gpt-5-2025-08-07,56.5,59.84
 gemini-2.5-pro-preview-06-05-thinking,46.6,51.03
 gemini-2.5-pro-preview-06-05,45.9,51.45
 doubao-seed-1-6-250615,45.2,51.76
@@ -7,14 +9,21 @@ o4-mini-2025-04-16,44.1,42.73
 doubao-seed-1-6-thinking-250615,44.1,49.53
 deepseek-r1-250528,44.0,50.51
 doubao-1.5-thinking-pro-250415,43.2,50.34
+glm-4.5,42.4,46.57
+openrouter:gpt-oss-120b,41.7,45.35
 deepseek-reasoner,38.4,47.24
 gemini-2.5-pro-preview-05-06,37.1,43.53
+glm-4.5-air,36.8,39.35
+openrouter:gpt-oss-20b,36.3,40.19
 openrouter:grok-3-mini-beta,35.3,38.19
 gemini-2.5-flash-preview-04-17-thinking,34.8,38.71
+openrouter:kimi-k2-0905,34.5,40.09
 claude-sonnet-4-20250514-thinking,32.6,42.18
+deepseek-v3-1-250821,31.3,36.75
 openrouter:qwq-32b,31.1,37.1
 glm-z1-32b,28.7,40.57
 claude-sonnet-4-20250514,28.2,41.43
+gpt-5-chat-2025-08-07,27.4,38.96
 claude-3-7-sonnet-20250219-thinking,27.1,38.37
 gpt-4.1,24.6,32.45
 doubao-seed-1-6-flash-250615,23.9,36.84

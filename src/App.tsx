@@ -63,7 +63,7 @@ function CSVTable({ src, searchTerm }: { src: string; searchTerm: string }) {
         <thead>
           <tr>
             {rows[0]?.map((h, i) => (
-              <th key={i} className="border px-2 py-1 bg-slate-50">{h}</th>
+              <th key={i} className="border px-2 py-1 bg-slate-50 text-black">{h}</th>
             ))}
           </tr>
         </thead>
@@ -139,7 +139,7 @@ function PuzzleExamples() {
         {/* Base Rule */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Base Rule</h3>
-          <div className="bg-gray-50 rounded-lg p-4 text-sm leading-relaxed">
+          <div className="bg-gray-50 rounded-lg p-4 text-sm leading-relaxed text-black">
             {puzzleData.base_rule.split('\n').map((line: string, index: number) => (
               <p key={index} className={line.trim() ? 'mb-2' : 'mb-4'}>
                 {line}
@@ -181,7 +181,7 @@ function PuzzleExamples() {
                 {/* Puzzle Description */}
                 <div className="mb-4">
                   <h5 className="font-medium text-gray-700 mb-2">Puzzle:</h5>
-                  <div className="bg-white rounded p-3 text-sm">
+                  <div className="bg-white rounded p-3 text-sm text-black">
                     {example.puzzle.split('\n').map((line: string, lineIndex: number) => (
                       <p key={lineIndex} className={line.trim() ? 'mb-1' : 'mb-2'}>
                         {line}
@@ -194,7 +194,7 @@ function PuzzleExamples() {
                 {example.question && (
                   <div className="mb-4">
                     <h5 className="font-medium text-gray-700 mb-2">Question:</h5>
-                    <div className="bg-white rounded p-3">
+                    <div className="bg-white rounded p-3 text-black">
                       {Array.isArray(example.question) ? (
                         <div>
                           {Array.isArray(example.question[0]) ? (
@@ -272,7 +272,7 @@ function PuzzleExamples() {
                 {example.answer && (
                   <div>
                     <h5 className="font-medium text-gray-700 mb-2">Answer:</h5>
-                    <div className="bg-white rounded p-3">
+                    <div className="bg-white rounded p-3 text-black">
                       {Array.isArray(example.answer) ? (
                         <div>
                           {Array.isArray(example.answer[0]) ? (
@@ -399,71 +399,90 @@ export default function App() {
   const [tableType, setTableType] = useState<'case' | 'cell'>('case');
   // 表格搜索词
   const [searchTerm, setSearchTerm] = useState('');
+  // 深色模式状态
+  const [isDark, setIsDark] = useState(false);
+
+  // 切换深色模式
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDark;
+    setIsDark(newDarkMode);
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* ───── NAVBAR ───── */}
-      <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur border-b">
+      <nav className="sticky top-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur border-b dark:border-gray-700">
         <div className="w-full px-4 py-3 flex items-center justify-between">
-          <h1 className="text-lg font-semibold tracking-tight">
-            CLUB&nbsp;<span className="text-indigo-600">Leaderboard</span>
+          <h1 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
+            CLUB&nbsp;<span className="text-indigo-600 dark:text-indigo-400">Leaderboard</span>
           </h1>
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
               <button 
                 onClick={() => document.getElementById('benchmark-select')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Benchmark
               </button>
               <button 
                 onClick={() => document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Summary
               </button>
               <button 
                 onClick={() => document.getElementById('bar-chart')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Bar Chart
               </button>
               <button 
                 onClick={() => document.getElementById('radar-chart')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Radar Chart
               </button>
               <button 
                 onClick={() => document.getElementById('accuracy-table')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Table
               </button>
               <button 
                 onClick={() => document.getElementById('pipeline')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Pipeline
               </button>
               <button 
                 onClick={() => document.getElementById('example')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 Example
               </button>
               <button 
                 onClick={() => document.getElementById('references')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+                className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
               >
                 References
               </button>
             </div>
+            <button
+              onClick={toggleDarkMode}
+              className="text-sm px-3 py-1 rounded-md hover:bg-indigo-50 dark:hover:bg-indigo-900/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
+            >
+              {isDark ? '☀️ Light' : '🌙 Dark'}
+            </button>
             <a
-              href="https://anonymous1coder.github.io/clubWeb/"
+              href="https://github.com/"
               target="_blank"
               rel="noreferrer"
-              className="text-sm underline hover:text-indigo-600 transition-colors"
+              className="text-sm underline hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-gray-700 dark:text-gray-300"
             >
               View&nbsp;Source
             </a>
@@ -645,32 +664,11 @@ export default function App() {
             </CardHeader>
             <CardContent className="text-sm">
               <ul className="list-disc ml-5 space-y-1">
-                <li>Club: Complex Logical Unification Benchmark</li>
+                <li>Club: Complex Logical Unified Benchmark</li>
                 <li>Logic-Evolve: A Multi-Agent Collaborative Generation Framework for Logical Reasoning</li>
               </ul>
             </CardContent>
           </Card>
-          
-        {/* 备案信息 */}
-        <div className="w-full flex justify-center mt-8">
-          <div className="flex items-center space-x-1 text-xs text-gray-400">
-            <img
-              src="FilingIcon.png"
-              alt="备案图标"
-              className="w-4 h-4"
-              style={{ display: 'inline-block', verticalAlign: 'middle' }}
-            />
-            <a
-              href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802046278"
-              rel="noreferrer"
-              target="_blank"
-              className="hover:text-indigo-600"
-            >
-              京公网安备11010802046278号
-            </a>
-            <span>京ICP备2025129385号</span>
-          </div>
-        </div>
         </div>
       </div>
     </div>
