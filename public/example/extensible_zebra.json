@@ -1,0 +1,125 @@
+{
+    "puzzle_name": "extensible_zebra",
+    "base_rule": "In the Zebra Puzzle, we are presented with a row of N houses arranged from left to right and numbered from 1 to N. Each house is inhabited by exactly one person, and each person has M distinct categories of attributes (such as nationality, pet, beverage, occupation, house color, etc.).\n\nAttribute domain constraints:\n1. Each attribute category contains exactly N distinct values.\n2. Each value can appear only once, and must be assigned to exactly one person in one house.\nAs a result, for any given attribute, its N values are uniquely and completely distributed among the N houses.\n\nStructural assumptions:\n1. Each house must have exactly one value from each attribute category, drawn from the full set of possible values for that category.\n2. The ordering of the houses (from 1 to N) is known and fixed, which enables spatial reasoning (e.g., “X is to the left of Y” or “X is immediately to the left of Y,” meaning X is directly left of Y with no other house in between).\n\nEach puzzle provides:\n- The full set of values for each attribute category.\n- A set of clues, which describe relationships between attributes or between attributes and positions.\n\nThe goal is to use these clues to uniquely determine the complete set of attributes for the resident of each house.",
+    "parameters": [
+        {
+            "name": "m_attributes",
+            "description": "the number of attributes",
+            "min": 2,
+            "max": 11,
+            "step": 1
+        },
+        {
+            "name": "n_objects",
+            "description": "the number of objects",
+            "min": 2,
+            "max": 10,
+            "step": 1
+        }
+    ],
+    "examples": [
+        {
+            "puzzle": "There are 6 houses, numbered 1 to 6 from left to right, as seen from across the street. Each house has a unique attribute for each of the following characteristics:\n- Each person has a unique name: Rachel, Kevin, Michael, Tessa, Julia, Bob.\n- Everyone has something unique for lunch: nectarine, pumpkin, eggplant, avocado, lettuce, papaya.\n- People have unique heights: 152cm, 172cm, 154cm, 158cm, 178cm, very tall.\n- People have unique favorite movie genres: disaster, fantasy, romance, comedy, crime, musical.\n- People use unique phone models: nokia 8.3, iphone 14, huawei p50, samsung galaxy note 20, blackberry keyone, samsung galaxy s21.\n- Each person lives in a unique style of house: penthouse, villa, cottage, victorian, palace, townhouse.\n\n## Clues for the Puzzle\n\n1. The person whose Food is papaya is not to the left of style of the person whose house is townhouse.\n2. style of the person whose house is victorian is not to the left of Rachel.\n3. Tessa is not to the left of Kevin.\n4. style of the person whose house is penthouse is somewhere to the right of style of the person whose house is townhouse.\n5. Rachel is not to the right of the person whose Heights is 158cm.\n6. Bob is not the person whose Movie-Genre is disaster or Bob is not style of the person whose house is penthouse or both.\n7. Phone the person whose Models is nokia 8.3 is not to the left of Kevin.\n8. The person whose Movie-Genre is romance is not Phone the person whose Models is blackberry keyone or the person whose Movie-Genre is romance is not Bob or both.\n9. Julia == Phone the person whose Models is blackberry keyone or Julia == the person whose Heights is 154cm, but not both.\n10. The person whose Food is pumpkin is not to the left of the person whose Food is nectarine.\n11. Phone the person whose Models is nokia 8.3 is somewhere to the right of the person whose Heights is very tall.\n12. The person whose Movie-Genre is disaster is not style of the person whose house is victorian.\n13. Phone the person whose Models is blackberry keyone == the person whose Heights is 178cm or Phone the person whose Models is blackberry keyone == the person whose Food is lettuce or both.\n14. style of the person whose house is victorian is not the person whose Food is eggplant or style of the person whose house is victorian is not the person whose Heights is 178cm or both.\n15. The person whose Heights is 152cm is somewhere to the right of the person whose Food is eggplant.\n16. Rachel is somewhere to the left of the person whose Heights is 172cm.\n17. Phone the person whose Models is samsung galaxy note 20 is not style of the person whose house is cottage or style of the person whose house is cottage is not the person whose Movie-Genre is fantasy or both.\n18. The person whose Food is papaya is somewhere to the left of Phone the person whose Models is samsung galaxy s21.\n19. Phone the person whose Models is nokia 8.3 is somewhere to the left of the person whose Food is nectarine.\n20. style of the person whose house is villa is not the person whose Heights is 154cm.\n21. The person whose Heights is 178cm is not to the left of Phone the person whose Models is blackberry keyone.\n22. The person whose Heights is 154cm is not Phone the person whose Models is iphone 14 or the person whose Food is lettuce is not the person whose Heights is 154cm or both.\n23. The person whose Food is papaya is not to the right of Tessa.\n24. The person whose Movie-Genre is disaster is not to the right of Phone the person whose Models is samsung galaxy note 20.\n25.The person whose Movie-Genre is musical is not to the left of the person whose Food is pumpkin.\n26. The person whose Movie-Genre is fantasy is not to the right of style of the person whose house is victorian.\n27. The person whose Movie-Genre is crime is not to the left of style of the person whose house is palace.\n28. The person whose Food is papaya is somewhere to the right of Phone the person whose Models is blackberry keyone.\n29. Phone the person whose Models is samsung galaxy s21 is not Julia or Phone the person whose Models is samsung galaxy s21 is not the person whose Movie-Genre is disaster or both.\n30. Phone the person whose Models is samsung galaxy note 20 is somewhere to the right of Phone the person whose Models is huawei p50.\n31. Phone the person whose Models is samsung galaxy s21 and style of the person whose house is cottage have different parity positions.\n32. The person whose Heights is 152cm is somewhere to the left of style of the person whose house is townhouse.\n33. Phone the person whose Models is blackberry keyone is not to the left of the person whose Heights is 152cm.\n34. Bob == Phone the person whose Models is huawei p50 or Phone the person whose Models is huawei p50 == the person whose Movie-Genre is crime or both.\n35. The person whose Heights is 158cm is somewhere to the left of style of the person whose house is penthouse.\n36. Julia and Phone the person whose Models is samsung galaxy s21 have different parity positions.\n37. The person whose Food is nectarine and Phone the person whose Models is nokia 8.3 have different parity positions.\n38. The person whose Heights is 154cm is not to the right of Phone the person whose Models is iphone 14.\n39. style of the person whose house is villa is in an even position.\n40. The person whose Food is pumpkin and the person whose Movie-Genre is disaster have different parity positions.\n41. Phone the person whose Models is nokia 8.3 is not Rachel or the person whose Heights is 154cm is not Phone the person whose Models is nokia 8.3 or both.\n42. Julia is not to the left of Rachel.\n43. The person whose Food is papaya and the person whose Movie-Genre is musical have the same parity positions.\n44. The person whose Movie-Genre is romance == Bob or the person whose Movie-Genre is romance == the person whose Heights is 158cm or both.\n45. The person whose Movie-Genre is crime == Phone the person whose Models is nokia 8.3 or the person whose Heights is 158cm == the person whose Movie-Genre is crime or both.\n46. The person whose Food is lettuce and style of the person whose house is palace have different parity positions.\n47. style of the person whose house is palace is somewhere to the right of the person whose Food is lettuce.\n48. style of the person whose house is penthouse is not the person whose Movie-Genre is crime or style of the person whose house is penthouse is not the person whose Food is nectarine or both.\n49. The person whose Heights is 154cm and the person whose Movie-Genre is musical have different parity positions.\n50. style of the person whose house is palace is somewhere to the left of Phone the person whose Models is samsung galaxy note 20.\n51. The person whose Heights is 154cm is not Phone the person whose Models is samsung galaxy note 20.\n52. The person whose Movie-Genre is crime is not to the left of Phone the person whose Models is nokia 8.3.\n53. The person whose Food is nectarine is not to the right of Phone the person whose Models is samsung galaxy s21.\n54. Rachel is not the person whose Heights is 152cm or Rachel is not the person whose Food is lettuce or both.\n55. The person whose Movie-Genre is fantasy is not to the left of the person whose Movie-Genre is fantasy.\n56. style of the person whose house is townhouse is somewhere to the right of Julia.\n57. Kevin is not to the left of style of the person whose house is townhouse.\n58. Phone the person whose Models is nokia 8.3 and style of the person whose house is penthouse have different parity positions.\n59. Phone the person whose Models is blackberry keyone is somewhere to the left of Tessa.\n60. Julia == the person whose Food is lettuce or Phone the person whose Models is huawei p50 == Julia or both.\n61. style of the person whose house is townhouse is not to the left of Phone the person whose Models is iphone 14.\n62. Phone the person whose Models is samsung galaxy note 20 and Rachel have different parity positions.\n63. Phone the person whose Models is iphone 14 and the person whose Movie-Genre is romance have the same parity positions.\n64. The person whose Food is avocado == Phone the person whose Models is nokia 8.3 or Phone the person whose Models is nokia 8.3 == the person whose Movie-Genre is crime, but not both.\n65. The person whose Food is nectarine == style of the person whose house is villa or style of the person whose house is villa == the person whose Heights is 178cm, but not both.\n66. Phone the person whose Models is samsung galaxy s21 is not the person whose Heights is 154cm.\n67. The person whose Heights is 154cm and Phone the person whose Models is samsung galaxy note 20 have different parity positions.\n68. Kevin is somewhere to the right of style of the person whose house is cottage.\n69. The person whose Movie-Genre is musical and Michael have the same parity positions.\n70. The person whose Heights is very tall is somewhere to the right of style of the person whose house is cottage.\n71. Rachel is not the person whose Heights is 178cm or Rachel is not the person whose Food is nectarine or both.",
+            "question": {
+                "House 1": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                },
+                "House 2": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                },
+                "House 3": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                },
+                "House 4": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                },
+                "House 5": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                },
+                "House 6": {
+                    "Name": "_",
+                    "Food": "_",
+                    "Height": "_",
+                    "Movie-Genre": "_",
+                    "Phone Models": "_",
+                    "Style of House": "_"
+                }
+            },
+            "answer": {
+                "House 1": {
+                    "Name": "Rachel",
+                    "Food": "eggplant",
+                    "Heights": "154cm",
+                    "Movie-Genre": "fantasy",
+                    "Phone Models": "iphone 14",
+                    "style of house": "victorian"
+                },
+                "House 2": {
+                    "Name": "Julia",
+                    "Food": "lettuce",
+                    "Heights": "152cm",
+                    "Movie-Genre": "comedy",
+                    "Phone Models": "blackberry keyone",
+                    "style of house": "cottage"
+                },
+                "House 3": {
+                    "Name": "Bob",
+                    "Food": "avocado",
+                    "Heights": "very tall",
+                    "Movie-Genre": "romance",
+                    "Phone Models": "huawei p50",
+                    "style of house": "palace"
+                },
+                "House 4": {
+                    "Name": "Kevin",
+                    "Food": "papaya",
+                    "Heights": "158cm",
+                    "Movie-Genre": "crime",
+                    "Phone Models": "nokia 8.3",
+                    "style of house": "townhouse"
+                },
+                "House 5": {
+                    "Name": "Tessa",
+                    "Food": "nectarine",
+                    "Heights": "172cm",
+                    "Movie-Genre": "disaster",
+                    "Phone Models": "samsung galaxy s21",
+                    "style of house": "penthouse"
+                },
+                "House 6": {
+                    "Name": "Michael",
+                    "Food": "pumpkin",
+                    "Heights": "178cm",
+                    "Movie-Genre": "musical",
+                    "Phone Models": "samsung galaxy note 20",
+                    "style of house": "villa"
+                }
+            }
+        }
+    ]
+}

@@ -369,13 +369,13 @@ function ImageGrid() {
       </div>
 
       {/* 图片网格 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5 gap-6">
         {SHOW_FILES.map((file) => (
           <div key={file} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
             <img
               src={`show/${file}`}
               alt={file.replace(/_/g, ' ').replace('.png', '')}
-              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             {/* 图片标题覆盖层 */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
@@ -634,14 +634,14 @@ export default function App() {
                   className="w-full max-w-md"
                   style={{ height: 'auto' }}
                 />
-                <div className="text-xs text-gray-500 mt-2">Logic-Evolve Pipeline Diagram</div>
+                <div className="text-xs text-gray-500 mt-2">LogicEvolve Pipeline Diagram</div>
               </div>
               <div className="w-full md:w-3/5">
-                <p>The overall Logic-Evolve pipeline consists of three main modules:</p>
+                <p>The overall LogicEvolve pipeline consists of three main modules:</p>
                 <ol className="list-decimal ml-5 mt-2 space-y-1">
-                  <li>Input Module: Structured metadata for logical reasoning tasks</li>
-                  <li>Core Module: Multi-agent collaborative generation, where multiple autonomous agents jointly generate and parse tasks</li>
-                  <li>Output Module: Large-scale logical reasoning datasets for training and evaluation, as well as the final CLUB leaderboard</li>
+                  <li><b>Input Module</b>: Structured metadata for logical reasoning tasks</li>
+                  <li><b>Core Module</b>: Multi-agent collaborative generation, where multiple autonomous agents jointly generate and parse tasks</li>
+                  <li><b>Output Module</b>: Large-scale logical reasoning datasets for evaluation, as well as the final CLUB leaderboard</li>
                 </ol>
               </div>
             </CardContent>
@@ -664,8 +664,8 @@ export default function App() {
             </CardHeader>
             <CardContent className="text-sm">
               <ul className="list-disc ml-5 space-y-1">
-                <li>Club: Complex Logical Unified Benchmark</li>
-                <li>Logic-Evolve: A Multi-Agent Collaborative Generation Framework for Logical Reasoning</li>
+                <li>Club: A Complex Logical Unified Benchmark for systematically evaluating models’ reasoning capabilities</li>
+                <li>LogicEvolve: A multi-agent framework for autonomously generating and evolving logical reasoning tasks</li>
               </ul>
             </CardContent>
           </Card>

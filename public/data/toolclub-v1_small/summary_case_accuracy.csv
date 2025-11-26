@@ -1,0 +1,6 @@
+Model,code,extensible_zebralogic,knights_and_knaves,line_forming_games,maze,string,sudoku,tetris,traditional_zebralogic,train_game_card_puzzle,overall
+gpt-5-2025-08-07,67.00,25.00,86.00,100.00,99.00,46.00,98.00,6.00,96.00,14.00,63.70
+openrouter:grok-4,51.00,50.00,62.00,95.00,91.00,33.33,61.00,33.33,97.00,60.00,63.37
+gemini-2.5-pro,44.00,2.86,98.00,98.00,84.00,15.00,91.00,3.00,93.00,15.00,54.39
+o4-mini-2025-04-16,64.00,0.00,55.00,99.00,98.33,23.00,90.00,2.00,84.00,,51.53
+deepseek-r1-250528,66.00,,57.00,81.00,93.00,15.00,93.00,0.00,54.00,0.00,45.90

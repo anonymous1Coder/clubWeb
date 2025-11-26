@@ -1,0 +1,6 @@
+Model,Acc,Cell Acc
+gpt-5-2025-08-07,63.7,74.81
+openrouter:grok-4,63.37,71.63
+gemini-2.5-pro,54.39,59.61
+o4-mini-2025-04-16,51.53,56.15
+deepseek-r1-250528,45.9,57.76
