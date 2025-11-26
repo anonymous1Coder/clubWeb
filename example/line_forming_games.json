@@ -1,5 +1,5 @@
 {
-    "puzzle_name": "line_forming_game",
+    "puzzle_name": "line_forming_games",
     "base_rule": "The N-in-a-row game is a general version of the tic-tac-toe family (also known as the m,n,k-game), played on an N×N board with players taking turns. The first player uses O, and the second player uses X. It generalizes classic games like tic-tac-toe and Gomoku.\n\nBasic rules:\n1. Move rule: Two players take turns placing their symbol in empty cells—O for the first player, X for the second. Once a cell is filled, it cannot be changed or moved.\n2. Win condition: If a player achieves K identical symbols (O or X) in a row horizontally, vertically, or diagonally (45°), they immediately win. If the entire board is filled and no player has achieved a K-in-a-row, the game ends in a draw, denoted as 'Both'.\n\nKnown conditions:\nThe board size N×N and target line length K must be specified. The initial configuration may contain zero or more placed symbols (O or X) and must be valid—i.e., no player has already won or any rule violations exist.\n\nObjective:\nGiven N, K, and the initial configuration, players alternate turns following the rules until one of three outcomes occurs:\n1. O forms a K-in-a-row → O wins;\n2. X forms a K-in-a-row → X wins;\n3. The board is filled without any K-in-a-row → Both (draw).",
     "parameters": [
         {

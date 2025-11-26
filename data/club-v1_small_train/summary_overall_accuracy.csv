@@ -1,0 +1,18 @@
+Model,Acc,Cell Acc
+qwen-2.5-base-sft-full-cutoff,27.2,36.83
+qwen-2.5-base-sft-full,19.0,25.75
+qwen-2.5-base-rl-grpo,18.8,32.93
+qwen-2.5-base-sft-lora-cutoff,16.2,31.81
+qwen-2.5-base-sft-lora,12.8,23.59
+qwen-2.5-instruct-rl-grpo,10.9,12.36
+qwen-2.5-instruct-sft-lora,8.0,22.93
+qwen-2.5-base-sft-full-v20250725-1000perTask,7.9,23.91
+qwen-2.5-base-rl-grpo-v20250725-all-step500,5.7,23.45
+qwen-2.5-instruct-sft-full,5.5,16.2
+qwen-2.5-base-grpo-v20250725-1000perTask,4.2,19.29
+qwen-2.5-base-sft-lora-v20250725-1000perTask-add3epoch,3.8,13.9
+qwen-2.5-instruct,3.7,8.82
+qwen-2.5-base-sft-lora-v20250725-1000perTask,3.5,14.96
+qwen-2.5-base-sft-lora-v20250725-all,2.1,17.0
+qwen-2.5-base,0.8,4.46
+qwen-2.5-base-sft-full-v20250725-all,0.2,2.24

@@ -1,19 +1,19 @@
 {
-    "puzzle_name": "zebralogic",
+    "puzzle_name": "traditional_zebra",
     "base_rule": "In the Zebra Puzzle, we are presented with a row of N houses arranged from left to right and numbered from 1 to N. Each house is inhabited by exactly one person, and each person has M distinct categories of attributes (such as nationality, pet, beverage, occupation, house color, etc.).\n\nAttribute domain constraints:\n1. Each attribute category contains exactly N distinct values.\n2. Each value can appear only once, and must be assigned to exactly one person in one house.\nAs a result, for any given attribute, its N values are uniquely and completely distributed among the N houses.\n\nStructural assumptions:\n1. Each house must have exactly one value from each attribute category, drawn from the full set of possible values for that category.\n2. The ordering of the houses (from 1 to N) is known and fixed, which enables spatial reasoning (e.g., “X is to the left of Y” or “X is immediately to the left of Y,” meaning X is directly left of Y with no other house in between).\n\nEach puzzle provides:\n- The full set of values for each attribute category.\n- A set of clues, which describe relationships between attributes or between attributes and positions.\n\nThe goal is to use these clues to uniquely determine the complete set of attributes for the resident of each house.",
     "parameters": [
         {
             "name": "m_attributes",
             "description": "the number of attributes",
             "min": 2,
-            "max": 11,
+            "max": 6,
             "step": 1
         },
         {
             "name": "n_objects",
             "description": "the number of objects",
             "min": 2,
-            "max": 10,
+            "max": 6,
             "step": 1
         }
     ],
